@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "day": "Hétfő",
+        "from": "19:00",
+        "to": "20:00",
+        "name": "ZeneEst",
+        "dj": "Márk"
+    },
+    {
+        "id": 2,
+        "day": "Kedd",
+        "from": "19:00",
+        "to": "20:00",
+        "name": "ReFresher",
+        "dj": "Benito"
+    },
+    {
+        "id": 3,
+        "day": "Szerda",
+        "from": "19:00",
+        "to": "20:00",
+        "name": "DerikeHÓRA",
+        "dj": "Derikehh"
+    },
+    {
+        "id": 4,
+        "day": "Csütörtök",
+        "from": "19:15",
+        "to": "20:00",
+        "name": "Faxomtele",
+        "dj": "Pearoo"
+    },
+    {
+        "id": 5,
+        "day": "Péntek",
+        "from": "19:00",
+        "to": "20:00",
+        "name": "Party Mix",
+        "dj": "DJ Hlásznyik"
+    },
+    {
+        "id": 6,
+        "day": "Szombat",
+        "from": "19:00",
+        "to": "20:00",
+        "name": "WkndBass",
+        "dj": "ByteBass"
+    },
+    {
+        "id": 7,
+        "day": "Vasárnap",
+        "from": "19:00",
+        "to": "20:00",
+        "name": "ZeneEst Extra",
+        "dj": "Márk"
+    }
+]

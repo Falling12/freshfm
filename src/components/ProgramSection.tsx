@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import MusicCard from './MusicCard'
 import ProgramCard from './ProgramCard'
+import program from '../data/program.json'
 
 const ProgramSection: FC = () => {
   return (
@@ -20,8 +21,8 @@ const ProgramSection: FC = () => {
             </div>
 
             <div className='flex items-center overflow-x-hidden gap-7'>
-                {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-                    <ProgramCard key={index} />
+                {program.map((item, index) => (
+                    <ProgramCard prog={item} key={index} />
                 ))}
             </div>
         </div>
