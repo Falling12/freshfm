@@ -14,5 +14,5 @@ body {
 }
 
 #root {
-  @apply h-screen;
+  @apply h-auto bg-[#181818];
 }

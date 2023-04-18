@@ -1,3 +1,7 @@
 .supportbtn {
   background: linear-gradient(93.89deg, #E056FD 0%, #BE2EDD 100%), rgba(255, 255, 255, 0.19);
 }
+
+.navlink {
+  @apply cursor-pointer hover:opacity-75 transition-all;
+}
