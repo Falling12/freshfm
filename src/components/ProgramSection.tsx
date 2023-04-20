@@ -5,7 +5,7 @@ import program from '../data/program.json'
 
 const ProgramSection: FC = () => {
   return (
-    <section id='program' className='flex flex-col items-center justify-center text-white gap-24 h-auto pb-2 z-[2]'>
+    <section id='program' className='flex flex-col items-center justify-center text-white gap-24 h-auto pb-2 z-[2] md:p-8'>
         <h1 className='text-[60px] font-black m-0'>Műsorlista</h1>
 
         <div className='flex flex-col relative items-center gap-7 pt-12 overflow-y-hidden'>

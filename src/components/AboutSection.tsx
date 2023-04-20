@@ -3,8 +3,8 @@ import AboutCard from './AboutCard'
 
 const AboutSection: FC = () => {
   return (
-    <section id="about" className='flex flex-col items-center justify-center text-white gap-24'>
-        <div className='relative mx-auto'>
+    <section id="about" className='flex flex-col items-center justify-center text-white gap-24 md:p-8'>
+        <div className='relative'>
             <h1 className='text-[60px] font-black m-0 z-[2] relative'>Rólunk</h1>
 
             <img src='/bg-blob-1.svg' className='blur-[475px] rotate-[87deg] absolute min-w-max min-h-max inset-0 z-[1] -left-[300%] -top-[200px]' alt='bg-blob'></img>
@@ -16,10 +16,10 @@ const AboutSection: FC = () => {
         </div>
 
 
-        <div className='grid grid-cols-4 gap-11 lg:grid-cols-3 md:!grid-cols-2 relative' id='csapatunk'>
+        <div className='grid grid-cols-4 gap-11 lg:grid-cols-3 md:!grid-cols-2 relative md:!flex md:flex-col md:w-full md:items-center' id='csapatunk'>
             {
                 [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) =>
-                <AboutCard person={{image: `/about/${item}.png`}} key={index} />
+                    <AboutCard person={{image: `/about/${item}.png`, name: 'Varga Márk', description: 'Varga Márk vagyok, a Fresh FM tulajdonosa.aa'}} key={index} />
                 )
             }
 

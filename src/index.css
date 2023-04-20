@@ -13,6 +13,6 @@ body {
   overflow-x: hidden;
 }
 
-#root {
+body {
   @apply h-auto bg-[#181818];
 }
