@@ -24,7 +24,7 @@ const AboutCard: FC<AboutCardProps> = ({ person }) => {
   }, [])
 
   return (
-    <div className='flex w-[200px] h-[200px] z-[2] group relative md:w-full md:h-fit md:gap-6 items-center'>
+    <div className='flex w-[200px] h-[200px]  group relative md:w-full md:h-fit md:gap-6 items-center'>
       <img src={person.image} className='md:w-[95px] md:h-[95px]' alt='person'></img>
 
       <div className='md:hidden group-hover:!opacity-100 opacity-0 from-transparent to-black bg-gradient-to-b absolute z-[3] inset-0 w-full h-full transition-all flex flex-col justify-end p-5 duration-200'>

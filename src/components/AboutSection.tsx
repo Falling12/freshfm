@@ -7,7 +7,7 @@ const AboutSection: FC = () => {
         <div className='relative'>
             <h1 className='text-[60px] font-black m-0 z-[2] relative'>Rólunk</h1>
 
-            <img src='/bg-blob-1.svg' className='blur-[475px] rotate-[87deg] absolute min-w-max min-h-max inset-0 z-[1] -left-[300%] -top-[200px]' alt='bg-blob'></img>
+            <img src='/bg-blob-1.svg' className='blur-[475px] rotate-[87deg] absolute min-w-max min-h-max inset-0 -z-[1] -left-[300%] -top-[200px]' alt='bg-blob'></img>
         </div>
 
         <div className='flex gap-16 items-center lg:flex-col z-[2]'>
@@ -23,7 +23,7 @@ const AboutSection: FC = () => {
                 )
             }
 
-            <img src='/bg-blob-2.svg' className='blur-[475px] rotate-[87deg] absolute min-w-max min-h-max inset-0 z-[1] top-[500px] -left-[500px]' alt='bg-blob'></img>
+            <img src='/bg-blob-2.svg' className='blur-[475px] rotate-[87deg] absolute min-w-max min-h-max inset-0 -z-[1] top-[500px] -left-[500px]' alt='bg-blob'></img>
         </div>
         
         <div className='flex gap-24 z-[2] flex-wrap w-full justify-center'>

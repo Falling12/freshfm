@@ -9,7 +9,7 @@ import ProgramSection from './components/ProgramSection'
 function App() {
 
   return (
-    <div className="App flex flex-col gap-32 h-full">
+    <div className="App flex flex-col gap-32 h-full overflow-x-hidden">
       <Header />
       <HeroSection />
       <ProgramSection />
