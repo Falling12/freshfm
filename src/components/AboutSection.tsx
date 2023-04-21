@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import AboutCard from './AboutCard'
+import team from '../data/team.json'
 
 const AboutSection: FC = () => {
   return (
@@ -18,8 +19,8 @@ const AboutSection: FC = () => {
 
         <div className='grid grid-cols-4 gap-11 lg:grid-cols-3 md:!grid-cols-2 relative md:!flex md:flex-col md:w-full md:items-center' id='csapatunk'>
             {
-                [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) =>
-                    <AboutCard person={{image: `/about/${item}.png`, name: 'Varga Márk', description: 'Varga Márk vagyok, a Fresh FM tulajdonosa.aa'}} key={index} />
+                team.map((item, index) =>
+                    <AboutCard person={{image: item.image, name: item.name, description: item.description}} key={index} />
                 )
             }
 

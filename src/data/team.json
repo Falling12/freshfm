@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Varga Márk",
+        "description": "Varga Márk vagyok, a Fresh FM tulajdonosa.",
+        "image": "/about/VargaMárk.png"
+    },
+    {
+        "name": "Váradi Dániel",
+        "description": "Váradi Dániel vagyok, Fresh FM egyik vezetője és szerkesztője.",
+        "image": "/about/VáradiDániel.png"
+    },
+    {
+        "name": "Barabás Dániel",
+        "description": "Barabás Dániel vagyok, 18 éves, a Fresh FM békéscsabai stúdió vezetője. A műsorvezetésen kívül a helyi iskolai rádió szerves része vagyok mint zenei szerkesztő.",
+        "image": "/about/BarabásDániel.png"
+    },
+    {
+        "name": "Varsányi Barnabás",
+        "description": "Varsányi Barnabás vagyok, 19 éves, a Fresh FM informatikai szakembere és fejlesztője.",
+        "image": "/about/VarsányiBarnabás.png"
+    },
+    {
+        "name": "Márk",
+        "description": "Márk vagyok, foglalkozásom egyetemista, megbízásos alapon programozó, a ZeneEst műsorvezetője, a srác aki nem volt képes megszólalni semmi pénzért sem.",
+        "image": "/about/Márk.png"
+    },
+    {
+        "name": "ByteBass",
+        "description": "ByteBass vagyok, a WkndBass műsorvezetője. Minden szombat este hét órai kezdettel menetelünk egészen nyolc óráig a rádióban.",
+        "image": "/about/ByteBass.png"
+    },
+    {
+        "name": "Bak Bence",
+        "description": "Benito vagyok,a ReFresher műsorvezetője. Minden kedden a legnagyobb retró bulival várok mindenkit.",
+        "image": "/about/BakBence.png"
+    },
+    {
+        "name": "Derikehh",
+        "description": "Derikehh vagyis Béla vagyok, hobbizenész, és a Fresh FM egyik műsorvezetője. Az én műsorom, a DerikeÓra minden szerda este 19:00 órától hallható a Fresh FM-en, az adásomban a legfrissebb, legfelkapottabb, legtrendibb zenék hallhatóak, és még sok más olyan, amit máshol nem hallhattok. Törekszem a változatosságra, ha a Fresh FM-et hallgatjátok, biztosan nem fogtok unatkozni.",
+        "image": "/about/Derikehh.png"
+    },
+    {
+        "name": "Pearoo",
+        "description": "Pearoo vagyok, a Faxomtele műsorvezetője. Minden csütörtökön 19:15 és 20:00 között beszélek a heti hírekről és botrányokról egy vendég társaságában.",
+        "image": "/about/Pearoo.png"
+    }
+]
