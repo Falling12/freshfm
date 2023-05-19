@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 const FooterSection: FC = () => {
     return (
-        <footer className='w-full min-h-[450px] flex justify-between p-10 bg-[#111111]  text-white lg:flex-col lg:gap-8'>
+        <footer className='w-full min-h-[450px] flex justify-between p-10 bg-[#111111] z-[2] text-white lg:flex-col lg:gap-8'>
             <img src='/logo-bigger.png' className='w-[150px] h-[150px] self-center lg:self-start' alt='logo'></img>
 
             <div className='flex flex-col gap-4 max-w-[300px]'>

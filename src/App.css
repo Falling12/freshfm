@@ -5,3 +5,8 @@
 .navlink {
   @apply cursor-pointer hover:opacity-75 transition-all;
 }
+
+.programcont::-webkit-scrollbar {
+  display: none;
+  opacity: 0;
+}
