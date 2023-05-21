@@ -21,7 +21,7 @@ const Header: FC = () => {
     }, [])
 
   return (
-    <header className={`text-white flex justify-between items-center p-4 z-10 fixed top-0 w-full transition-all ${navOpen ? 'md:!flex-col md:w-full md:bg-black/30' : ''} ${navBlur ? 'backdrop-blur-xl bg-black/30' : ''}`}>
+    <header className={`text-white flex justify-between items-center p-4 z-10 fixed top-0 w-full transition-all duration-500 ${navOpen ? 'md:!flex-col md:w-full md:bg-black/30' : ''} ${navBlur ? 'backdrop-blur-xl bg-black/30' : ''}`}>
         <a href='#' className={`block md:w-[50px] ${navOpen ? 'md:!hidden' : ''}`}>
             <img src='/logo.png' alt='logo' />
         </a>

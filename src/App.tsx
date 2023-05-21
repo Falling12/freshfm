@@ -7,14 +7,18 @@ import HeroSection from './components/HeroSection'
 import ProgramSection from './components/ProgramSection'
 
 function App() {
+  const [source, setSource] = useState<string>("mp3")
+  const selectSource = (src: string) => {
+    setSource(src)
+  }
 
   return (
     <div className="App flex flex-col gap-32 h-full overflow-x-hidden">
       <Header />
-      <HeroSection />
+      <HeroSection src={source} />
       <ProgramSection />
       <AboutSection />
-      <FooterSection />
+      <FooterSection selectSource={selectSource}/>
     </div>
   )
 }

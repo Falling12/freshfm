@@ -1,5 +1,25 @@
 .supportbtn {
-  background: linear-gradient(93.89deg, #E056FD 0%, #BE2EDD 100%), rgba(255, 255, 255, 0.19);
+  position: relative;
+  background-image: linear-gradient(93.89deg, #E056FD 0%, #BE2EDD 100%);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.supportbtn::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(93.89deg, #BE2EDD 0%, #E056FD 100%);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.supportbtn:hover::before {
+  opacity: 1;
 }
 
 .navlink {
@@ -9,4 +29,9 @@
 .programcont::-webkit-scrollbar {
   display: none;
   opacity: 0;
+}
+
+.programcont {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,6 +1,17 @@
 import React, { FC } from 'react'
 
-const FooterSection: FC = () => {
+interface Props {
+    selectSource: any
+}
+
+const FooterSection: FC<Props> = (props) => {
+    const { selectSource } = props;
+
+    const select = (e: any) => {
+        e.preventDefault()
+        selectSource(e.target.value)
+    }
+
     return (
         <footer className='w-full min-h-[450px] flex justify-between p-10 bg-[#111111] z-[2] text-white lg:flex-col lg:gap-8'>
             <img src='/logo-bigger.png' className='w-[150px] h-[150px] self-center lg:self-start' alt='logo'></img>
@@ -10,6 +21,11 @@ const FooterSection: FC = () => {
                 <p className='opacity-80'>Nemzeti Média- és Hírközlési Hatóság, 1015 Budapest, Ostrom u. 23-25. - honlap:</p>
                 <a href='https://nmhh.hu/' className='text-[#BB6BD9]' target="_blank">https://nmhh.hu/</a>
                 <img src='/nmhh.png' className='w-[200px]' alt='nmhh'></img>
+                <select className='bg-[#000] rounded-md px-2 py-1' onChange={(e) => select(e)}>
+                    <option>Forrás</option>
+                    <option value="mp3">MP3</option>
+                    <option value="aac">AAC</option>
+                </select>
             </div>
 
             <div className='flex flex-col gap-4 max-w-[300px]'>

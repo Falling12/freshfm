@@ -14,14 +14,24 @@ const ProgramSection: FC = () => {
         let currentDay = new Date().getDay() == 0 ? 6 : new Date().getDay() - 1
 
         let currentHour = new Date().getHours()
+        let currentMinute = new Date().getMinutes()
+
+        if(currentHour == 24 && currentMinute == 59) {
+            programCont.scrollLeft += 20
+        }
 
         programCont.scrollLeft = (currentDay * 320) + (currentHour * 4.166666666666667)
 
         const interval = setInterval(() => {
             currentHour = new Date().getHours()
             currentDay = new Date().getDay() == 0 ? 6 : new Date().getDay() - 1
+            currentMinute = new Date().getMinutes()
 
-            programCont.scrollLeft = (currentDay * 320) + (currentHour * 4.166666666666667)
+            if(currentHour == 24 && currentMinute == 59) {
+                programCont.scrollLeft += 20
+            }
+
+            programCont.scrollLeft = (currentDay * 320) + (currentHour * 13.333333333333333333333333333333)
 
             console.log(currentDay, currentHour)
         }, 1000)
@@ -32,7 +42,7 @@ const ProgramSection: FC = () => {
       }, []);
 
     return (
-        <section id='program' className='flex flex-col items-center justify-center text-white gap-24 h-auto pb-2 z-[2] md:p-8 relative'>
+        <section id='program' className='flex flex-col items-center justify-center text-white gap-24 h-auto pb-2 z-[2] md:p-8 relative overflow-y-hidden'>
             <h1 className='text-[60px] font-black m-0'>Műsorlista</h1>
 
             <svg className='z-10 absolute top-[10.7rem] md:!top-[12.7rem]' width="17" height="359" viewBox="0 0 17 359" fill="none" xmlns="http://www.w3.org/2000/svg">

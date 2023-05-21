@@ -1,10 +1,14 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useRef } from 'react'
 import axios from 'axios'
 
-const HeroSection: FC = () => {
+interface Props {
+  src: string
+}
+
+const HeroSection: FC<Props> = (props) => {
   const [music, setMusic] = React.useState<any>(null)
-  const [source, setSource] = React.useState<any>(null)
-  const [playing, setPlaying] = React.useState<any>(null)
+  const player = useRef<HTMLAudioElement>(null)
+  const [playing, setPlaying] = React.useState<any>(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,12 +29,16 @@ const HeroSection: FC = () => {
   }, [])
 
   const play = () => {
-    const player = document.getElementById('player') as HTMLAudioElement
+    if(!player.current) return;
     if (playing) {
-      player.pause()
+      console.log(player)
+      player.current.pause()
       setPlaying(false)
     } else {
-      player.play()
+      console.log(player)
+      if(props.src === 'mp3') player.current.src = 'http://botvps.bdaniel.hu:8000/freshfm.mp3';
+      else if(props.src === 'aac') player.current.src = 'http://botvps.bdaniel.hu:8000/freshmobil.aac';
+      player.current.play()
       setPlaying(true)
     }
   }
@@ -50,9 +58,8 @@ const HeroSection: FC = () => {
             </svg>
           )
         }
-        Halgass bele
-        <audio id='player'>
-          <source src={'http://botvps.bdaniel.hu:8000/freshfm.mp3'} type='audio/mp3' />
+        {playing ? 'Leállítás' : 'Halgass bele'}
+        <audio ref={player} src={props.src == 'mp3' ? 'http://botvps.bdaniel.hu:8000/freshfm.mp3' : 'http://botvps.bdaniel.hu:8000/freshmobil.aac'}>
         </audio>
       </button>
 
