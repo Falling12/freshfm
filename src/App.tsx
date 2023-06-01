@@ -13,7 +13,7 @@ function App() {
   }
 
   return (
-    <div className="App flex flex-col gap-32 h-full overflow-x-hidden">
+    <div className="App flex flex-col gap-32 h-full overflow-hidden">
       <Header />
       <HeroSection src={source} />
       <ProgramSection />

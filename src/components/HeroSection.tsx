@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react'
+import React, { ChangeEvent, FC, FormEvent, useEffect, useRef } from 'react'
 import axios from 'axios'
 
 interface Props {
@@ -31,21 +31,27 @@ const HeroSection: FC<Props> = (props) => {
   const play = () => {
     if(!player.current) return;
     if (playing) {
-      console.log(player)
       player.current.pause()
       setPlaying(false)
     } else {
-      console.log(player)
-      if(props.src === 'mp3') player.current.src = 'http://botvps.bdaniel.hu:8000/freshfm.mp3';
-      else if(props.src === 'aac') player.current.src = 'http://botvps.bdaniel.hu:8000/freshmobil.aac';
+      if(props.src === 'mp3') player.current.src = 'http://botvps.bdaniel.hu:8000/freshfm.mp3?' + new Date().getTime();
+      else if(props.src === 'aac') player.current.src = 'http://botvps.bdaniel.hu:8000/freshmobil.aac?' + new Date().getTime();
       player.current.play()
       setPlaying(true)
     }
   }
+
+  function OnVolumeEv(e: FormEvent) {
+    if (e.target == null || player.current == null) return;
+    let val = e.target.value != undefined ? parseInt(e.target.value) / 100 : .5;
+
+    player.current.volume = val;  
+  }
+
   return (
-    <section id='hero' className='flex flex-col items-center justify-center h-screen bg-hero bg-no-repeat text-white'>
+    <section id='hero' className='flex select-none outline-none flex-col items-center justify-center h-screen bg-hero bg-no-repeat bg-center bg-cover text-white'>
       <h1 className='text-[130px] font-black m-0 lg:text-[80px] md:!text-[60px] text-center'>Összeköt a zene.</h1>
-      <h2 className='text-[35px] font-semibold m-0 lg:text-[25px] md:!text-[20px] text-center'>Most szól: {music ? music.title : 'Ismeretlen'}</h2>
+      <h2 className='text-[35px] m-0 lg:text-[25px] md:!text-[20px] text-center text-white'>Most szól: <b className='text-white/70 select-text ml-4 text-left max-w-[650px] inline-flex'>{music ? music.title : 'Ismeretlen'}</b></h2>
       <button role={'button'} className='flex items-center gap-4 supportbtn rounded-xl py-2 px-4 mt-8 font-semibold text-[20px]' onClick={() => play()}>
         {
           playing ? (
@@ -62,6 +68,13 @@ const HeroSection: FC<Props> = (props) => {
         <audio ref={player} src={props.src == 'mp3' ? 'http://botvps.bdaniel.hu:8000/freshfm.mp3' : 'http://botvps.bdaniel.hu:8000/freshmobil.aac'}>
         </audio>
       </button>
+
+      <div className="flex items-center gap-4 mt-4">
+        <svg className="mt-1" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5097 9.5C14.5097 8.18262 13.7044 7.05449 12.5614 6.57949L11.9528 8.0416C12.5243 8.2791 12.9251 8.84316 12.9251 9.50371C12.9251 10.1605 12.5243 10.7246 11.9528 10.9658L12.5614 12.4279C13.7044 11.9455 14.5097 10.8174 14.5097 9.5ZM13.7786 3.65527L13.17 5.11738C14.8882 5.83359 16.0942 7.52578 16.0942 9.5C16.0942 11.4779 14.8882 13.1664 13.17 13.8826L13.7786 15.3447C16.0683 14.391 17.6751 12.1348 17.6751 9.5C17.6751 6.86523 16.0683 4.60898 13.7786 3.65527ZM1.84424 5.54043V13.4559H5.00967L10.5501 19V0L5.00967 5.54043H1.84424Z" fill="white"></path>
+        </svg>
+        <input type="range" onInput={OnVolumeEv} min="0" max="100" className="mt-2" id="myRange"/>
+      </div>
 
       <a className='absolute bottom-5 cursor-pointer' href='#program'>
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">

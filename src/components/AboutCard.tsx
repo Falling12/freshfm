@@ -16,8 +16,8 @@ const AboutCard: FC<AboutCardProps> = ({ person }) => {
 
   useEffect(() => {
     if (!person.description) return
-    if (person.description?.length > 42) {
-      setTrimmedDesc(person.description?.slice(0, 42) + '...')
+    if (person.description?.length > 50) {
+      setTrimmedDesc(person.description?.slice(0, 50) + '...')
     } else {
       setTrimmedDesc(person.description)
     }
@@ -25,11 +25,11 @@ const AboutCard: FC<AboutCardProps> = ({ person }) => {
 
   return (
     <div className='flex w-[200px] h-[200px]  group relative md:w-full md:h-fit md:gap-6 items-center'>
-      <img src={person.image} className='md:w-[95px] md:h-[95px]' alt='person'></img>
+      <img src={person.image} className='md:w-[95px] md:h-[95px] object-cover' alt='person'></img>
 
       <div className='md:hidden group-hover:!opacity-100 opacity-0 from-transparent to-black bg-gradient-to-b absolute z-[3] inset-0 w-full h-full transition-all flex flex-col justify-end p-5 duration-200'>
         <h1 className='text-[20px] font-bold'>{person.name}</h1>
-        <p className='text-[13px] opacity-75'>{trimmedDesc}</p>
+        <p className='text-[13px] opacity-75 truncate max-h-[38px] h-full whitespace-normal w-full' style={{ wordBreak: 'break-word' }}>{trimmedDesc}</p>
       </div>
 
       <div className='flex-col hidden md:flex gap-4'>
